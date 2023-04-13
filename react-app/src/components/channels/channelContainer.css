@@ -1,0 +1,267 @@
+.channelContainer {
+    background-color: rgb(47,49,54);
+    width: fit-content;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px;
+    flex: 1;
+    overflow-y: scroll;
+}
+
+.channelNameHolder {
+    width: 210px;
+    height: 28px;
+    padding: 5px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.channelNameHolder:hover {
+    background-color: rgb(58,60,67);
+}
+
+.channelNameHolder:hover .channelName {
+    color: rgb(255,255,255);
+}
+
+.textChannelHeaderContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 225px;
+    margin: 0;
+}
+
+.textChannelHeaderContainer div {
+    color: rgb(185, 187, 190);
+    cursor: pointer;
+}
+
+.textChannelHeaderContainer div:hover {
+    color: white;
+}
+
+.editServerIcon {
+    color: rgb(185, 187, 190);
+    cursor: pointer;
+}
+
+.editServerIcon:hover {
+    color: white;
+}
+
+.serverNameContainer {
+    width: 100%;
+    border-bottom: 2px rgb(36, 37, 41) solid;
+    margin-bottom:  10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.serverName {
+    color: rgb(255,255,255);
+    font-size: 15px;
+    max-width: 200px;
+    max-height: 59px;
+    margin-top: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.serverNameError {
+    color: rgb(237,66,69);
+}
+
+#leaveServerIcon:hover {
+    color: rgb(237,66,69);
+}
+
+.textChannels {
+    color: rgb(142,146,151);
+    margin: 5px 0;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.channelList {
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgb(0, 0, 0);
+  }
+
+.channelList a {
+    text-decoration: none;
+}
+
+.channelName {
+    color: rgb(142,146,151);
+    margin: 0;
+    width: 165px;
+    max-width: 200px;
+    white-space: nowrap;
+    text-decoration: none;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 15px;
+}
+
+.addModal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    box-sizing: border-box;
+    background-color: rgba(68, 68, 68, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+}
+
+.addChannelFormContainer {
+    width: 420px;
+    background-color: rgb(54,57,63);
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.addChannelFormContainer h3 {
+    text-align: center;
+    color: white;
+    margin-bottom: 5px;
+}
+
+.addChannelFormContainer h5 {
+    text-align: center;
+    color: rgb(185,187,190);
+    margin: 0;
+    margin-bottom: 20px;
+}
+
+.addChannelInput {
+    display: flex;
+    flex-direction: column;
+}
+
+.addChannelInput label {
+    color: rgb(220,221,222);
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.addChannelInput input {
+    background-color: rgb(48,51,57);
+    border: 1px solid black;
+    outline: none;
+    font-size: 17px;
+    padding: 4px;
+    color: rgb(220,221,222);
+    margin-bottom: 20px;
+}
+
+.addChannelInput input:focus {
+    border: 1px solid rgb(102, 189, 255);
+}
+
+.addChannelButtons {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#cancelChannel {
+    background: none;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    color: rgb(220,221,222);
+    margin-right: 10px;
+    font-size: 14px;
+}
+
+.createChannel {
+    background-color: rgb(67,75,148);
+    border: none;
+    border-radius: 3px;
+    padding: 0;
+    font: inherit;
+    cursor: not-allowed;
+    padding: 8px;
+    color: rgb(151,152,154);
+    font-size: 14px;
+}
+
+#createChannel {
+    background-color: rgb(88,101,242);
+    color: rgb(241,242,254);
+    cursor: pointer;
+}
+
+#serverOverview {
+    text-align: left;
+}
+
+.editServerFormContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#editForm {
+    width: 300px;
+    margin-top: 10px;
+}
+
+.serverIconEdit, .noIconServerEdit {
+    width: 100px;
+    height: 100px;
+    background-color: rgb(88,101,242);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 50px;
+    font-weight: 200;
+    background-size: cover;
+    background-position: center;
+}
+
+#editServerButtons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.editServerButtonCancelEdit {
+    display: flex;
+    align-items: center;
+}
+
+.deleteServer {
+    color: rgb(237,66,69);
+    cursor: pointer;
+}
+
+.selectedChannel h4 {
+    color: white;
+    border-bottom: 1px solid rgb(175, 175, 175);
+    padding-bottom: 3px;
+    width: fit-content;
+}
+
+#selectValidServer {
+    color: white;
+}
