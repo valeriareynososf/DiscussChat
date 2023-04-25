@@ -1,4 +1,4 @@
-from .db import db
+from .db import db, environment, SCHEMA, add_prefix_for_prod
 
 # joins table
 # server_members = db.Table(
@@ -9,11 +9,13 @@ from .db import db
 
 class Server(db.Model):
     __tablename__ = 'servers'
+     if environment == "production":
+        __table_args__ = {'schema': SCHEMA}
 
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(40), nullable=False, unique=False)
     description = db.Column(db.String(500), nullable=True, unique=False)
-    owner_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False, unique=False)
+    owner_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod("users.id")), nullable=False, unique=False)
     icon = db.Column(db.String(1000), nullable=False, unique= False)
 
     user = db.relationship("User", back_populates="servers")
