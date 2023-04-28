@@ -31,5 +31,11 @@ def seed_servers():
 # resets the auto incrementing primary key, CASCADE deletes any
 # dependent entities
 def undo_servers():
-    db.session.execute('TRUNCATE servers RESTART IDENTITY CASCADE;')
+    if environment == "production":
+        db.session.execute(f"TRUNCATE table {SCHEMA}.users RESTART IDENTITY CASCADE;")
+    else:
+        db.session.execute("DELETE FROM servers")
+
     db.session.commit()
+    # db.session.execute('TRUNCATE servers RESTART IDENTITY CASCADE;')
+    # db.session.commit()
