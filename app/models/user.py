@@ -5,7 +5,7 @@ from flask_login import UserMixin
 
 class User(db.Model, UserMixin):
     __tablename__ = 'users'
-     if environment == "production":
+    if environment == "production":
         __table_args__ = {'schema': SCHEMA}
 
     id = db.Column(db.Integer, primary_key=True)

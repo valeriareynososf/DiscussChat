@@ -20,6 +20,8 @@ def validation_errors_to_error_messages(validation_errors):
 
 @auth_routes.route('/')
 def authenticate():
+    print("home page")
+    print("current_user:",current_user)
     """
     Authenticates a user.
     """
@@ -59,6 +61,7 @@ def sign_up():
     """
     Creates a new user and logs them in
     """
+    print("signingup")
     form = SignUpForm()
     form['csrf_token'].data = request.cookies['csrf_token']
     if form.validate_on_submit():

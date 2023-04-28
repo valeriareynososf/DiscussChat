@@ -15,7 +15,7 @@ function LoginForm() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (errors.length) {
+    if (errors?.length) {
       setLoginError('loginErrorLabel')
       setLoginErrorBorder('loginErrorBorder')
     }
@@ -23,7 +23,9 @@ function LoginForm() {
 
   const onLogin = async (e) => {
     e.preventDefault();
+    console.log("clicked login")
     const data = await dispatch(login(email, password));
+    console.log("data", data)
     if (data) {
       setErrors(data);
     }
