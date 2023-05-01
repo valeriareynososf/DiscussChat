@@ -18,11 +18,11 @@ def seed_members():
     db.session.commit()
 
 def undo_Server_Member():
-    if environment == "production":
-        db.session.execute(f"TRUNCATE table {SCHEMA}.users RESTART IDENTITY CASCADE;")
-    else:
-        db.session.execute("DELETE FROM server_members")
+    # if environment == "production":
+    #     db.session.execute(f"TRUNCATE table {SCHEMA}.users RESTART IDENTITY CASCADE;")
+    # else:
+    #     db.session.execute("DELETE FROM server_members")
 
-    db.session.commit()
-    # db.session.execute('TRUNCATE server_members RESTART IDENTITY CASCADE;')
     # db.session.commit()
+    db.session.execute('TRUNCATE server_members RESTART IDENTITY CASCADE;')
+    db.session.commit()

@@ -26,11 +26,11 @@ def seed_channels():
 # resets the auto incrementing primary key, CASCADE deletes any
 # dependent entities
 def undo_channels():
-    if environment == "production":
-        db.session.execute(f"TRUNCATE table {SCHEMA}.users RESTART IDENTITY CASCADE;")
-    else:
-        db.session.execute("DELETE FROM channels")
+    # if environment == "production":
+    #     db.session.execute(f"TRUNCATE table {SCHEMA}.users RESTART IDENTITY CASCADE;")
+    # else:
+    #     db.session.execute("DELETE FROM channels")
 
-    db.session.commit()
-    # db.session.execute('TRUNCATE channels RESTART IDENTITY CASCADE;')
     # db.session.commit()
+    db.session.execute('TRUNCATE channels RESTART IDENTITY CASCADE;')
+    db.session.commit()

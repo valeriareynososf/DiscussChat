@@ -30,11 +30,11 @@ def seed_messages():
     db.session.commit()
 
 def undo_channel_message():
-    if environment == "production":
-        db.session.execute(f"TRUNCATE table {SCHEMA}.users RESTART IDENTITY CASCADE;")
-    else:
-        db.session.execute("DELETE FROM channel_messages")
+    # if environment == "production":
+    #     db.session.execute(f"TRUNCATE table {SCHEMA}.users RESTART IDENTITY CASCADE;")
+    # else:
+    #     db.session.execute("DELETE FROM channel_messages")
 
-    db.session.commit()
-    # db.session.execute('TRUNCATE channel_messages RESTART IDENTITY CASCADE;')
     # db.session.commit()
+    db.session.execute('TRUNCATE channel_messages RESTART IDENTITY CASCADE;')
+    db.session.commit()

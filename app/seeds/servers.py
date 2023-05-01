@@ -2,7 +2,7 @@ from app.models import db, Server
 from coolname import generate_slug
 from faker import Faker
 
-from app.models.server_memebers import Server_Member
+from app.models.server_members import Server_Member
 fake = Faker()
 
 # Adds a demo user, you can add other users here if you want
@@ -31,11 +31,11 @@ def seed_servers():
 # resets the auto incrementing primary key, CASCADE deletes any
 # dependent entities
 def undo_servers():
-    if environment == "production":
-        db.session.execute(f"TRUNCATE table {SCHEMA}.users RESTART IDENTITY CASCADE;")
-    else:
-        db.session.execute("DELETE FROM servers")
+    # if environment == "production":
+    #     db.session.execute(f"TRUNCATE table {SCHEMA}.users RESTART IDENTITY CASCADE;")
+    # else:
+    #     db.session.execute("DELETE FROM servers")
 
-    db.session.commit()
-    # db.session.execute('TRUNCATE servers RESTART IDENTITY CASCADE;')
     # db.session.commit()
+    db.session.execute('TRUNCATE servers RESTART IDENTITY CASCADE;')
+    db.session.commit()
