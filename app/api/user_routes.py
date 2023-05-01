@@ -27,7 +27,7 @@ def user(id):
 View and create servers
 '''
 
-# Get all servers a single user is a memeber of
+# Get all servers a single user is a member of
 @user_routes.route('/<int:userId>/servers')
 @login_required
 def user_servers(userId):
