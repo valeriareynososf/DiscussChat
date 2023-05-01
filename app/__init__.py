@@ -24,7 +24,7 @@ from .config import Config
 
 from .socketIO import socketio
 
-app = Flask(__name__)
+# app = Flask(__name__)
 # print("namechange", __name__)
 # print("boolean", __name__ == "__main__")
 # if __name__ == "__main__":
