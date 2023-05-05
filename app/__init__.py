@@ -24,13 +24,12 @@ from .config import Config
 
 from .socketIO import socketio
 
-# app = Flask(__name__)
-# print("namechange", __name__)
-# print("boolean", __name__ == "__main__")
-# if __name__ == "__main__":
-#     print("name HEY IN IF STATEMENT")
-#     app.run(port=8000, debug=True)
-app = Flask(__name__, static_folder='../react-app/build', static_url_path='/')
+app = Flask(__name__)
+
+if __name__ == "__main__":
+    app.run(port=8000, debug=True)
+
+# app = Flask(__name__, static_folder='../react-app/build', static_url_path='/')
 # def func():
     # time.sleep(5)
     # user = User.query.get(1)
