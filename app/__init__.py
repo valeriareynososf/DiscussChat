@@ -24,7 +24,8 @@ from .config import Config
 
 from .socketIO import socketio
 
-app = Flask(__name__)
+# app = Flask(__name__)
+app = Flask(__name__, static_folder='../react-app/build', static_url_path='/')
 
 if __name__ == "__main__":
     app.run(port=8000, debug=True)
