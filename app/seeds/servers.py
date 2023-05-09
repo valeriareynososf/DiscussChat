@@ -5,7 +5,6 @@ from faker import Faker
 from app.models.server_members import Server_Member
 fake = Faker()
 
-# Adds a demo user, you can add other users here if you want
 def seed_servers():
     # for i in range(1, 26):
     #     serv = Server(name=f'Server {i}', description=f'This is server {i}', owner_id=(1), icon='https://res.cloudinary.com/dt8q1ngxj/image/upload/v1636394875/Discuss/discord_bj2duo.png')
