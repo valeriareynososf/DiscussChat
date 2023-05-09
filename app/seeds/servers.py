@@ -1,8 +1,8 @@
-from app.models import db, Server
+from app.models import db, Server, Server_Member
 from coolname import generate_slug
 from faker import Faker
 
-from app.models.server_members import Server_Member
+# from app.models.server_members import Server_Member
 fake = Faker()
 
 def seed_servers():
