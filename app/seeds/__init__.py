@@ -39,7 +39,7 @@ def seed():
     seed_users()
     seed_servers()
     seed_channels()
-    # seed_members()
+    seed_members()
     seed_messages()
 
 # Creates the `flask seed undo` command
