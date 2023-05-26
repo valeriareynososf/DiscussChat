@@ -1,5 +1,5 @@
 # DISCUSS
-[https://discuss-aa.herokuapp.com/](https://discuss-chat.onrender.com/)
+[https://discuss-chat.onrender.com/](https://discuss-chat.onrender.com/)
 
 Discuss is a place to find and create your community and meet others that share your interests. 
 It was inspired by Discord and built using React.js and Python
